@@ -1,0 +1,16 @@
+services:
+  dev:
+    platform: ${DOCKER_PLATFORM:-linux/amd64}
+    build:
+      context: ./docker/dev
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - .:/workspace:cached
+      - vscode:/vscode
+      - ${SSH_DIRECTORY:-~/.ssh}:/home/dev/.ssh
+    command: /bin/sh -c "while sleep 1000; do :; done"
+volumes:
+  vscode:
+    name: vscode
+    external: true

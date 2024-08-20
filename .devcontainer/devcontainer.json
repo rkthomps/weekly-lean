@@ -1,0 +1,26 @@
+{
+  "name": "weekly-lean",
+  // based on https://code.visualstudio.com/remote/advancedcontainers/connect-multiple-containers
+  "dockerComposeFile": [
+    "../docker-compose.yaml"
+  ],
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "remoteUser": "dev",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "fish",
+        "terminal.integrated.defaultProfile.osx": "fish",
+        "editor.formatOnSave": true,
+        // required to get extensions to work on rosetta https://github.com/microsoft/vscode-remote-release/issues/8541
+        "extensions.verifySignature": false
+      },
+      "extensions": [
+        "GitHub.copilot",
+        "GitHub.copilot-chat",
+        "leanprover.lean4"
+      ]
+    }
+  }
+}
