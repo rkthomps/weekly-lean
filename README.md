@@ -1,2 +1,2 @@
 # weekly-lean
-The lean weekly challenge!
+Every week, three heroic students embark on a theorem proving challenge in lean. These are their stories. 
