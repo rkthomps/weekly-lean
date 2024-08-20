@@ -6,6 +6,7 @@ There is a bag of balls that has at least two balls to begin with. Each ball in 
 - {White, Black} -> {Black}
 - {Black, Black} -> {White}
 
-Prove that:
+## Challenge
+**Prove that**:
 1. If the bag begins with an even number of black balls, it ends with a white ball.
 2. If the bag begins with an odd number of black balls, it ends with a black ball.
