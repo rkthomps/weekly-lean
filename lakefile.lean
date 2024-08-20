@@ -13,4 +13,4 @@ require mathlib from git
 
 @[default_target]
 lean_lib «WeeklyLean» where
-  -- add any library configuration options here
+  globs := #[Glob.submodules `WeeklyLean]
