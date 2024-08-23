@@ -8,10 +8,6 @@ inductive Ball where
 notation:max " ⚪ " => Ball.White
 notation:max " ⚫️ " => Ball.Black
 
-def p : Nat → Nat → Nat
-  | 0, 0 => 0
-  | n1, n2 => n1 + n2
-
 def Ball.beq : (Ball → Ball → Bool)
   | ⚪, ⚪ => true
   | ⚪, ⚫️ => false
@@ -145,7 +141,7 @@ theorem turnPreservesBlackParity: forall (bb: BallBag) (g: StdGen),
   | ⚫️ :: ⚪ :: r => by simp[turn, shufflePreservesNumBlacks, num_blacks]
   | ⚫️ :: ⚫️ :: r => by
     simp[turn, shufflePreservesNumBlacks, num_blacks, EvenP]
-    generalize h_nb: (num_blacks r) = nb
+    generalize (num_blacks r) = nb
     have H' : 1 + (1 + nb) = Nat.succ (Nat.succ nb) := by omega
     rw [H']; simp[EvenP, even]
 
